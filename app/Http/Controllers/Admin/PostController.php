@@ -42,6 +42,7 @@ class PostController extends Controller
         $newPost = new Post();
         $newPost->fill($data);
         $newPost->slug = Str::of($newPost->title)->slug('-');
+        $newPost->published = isset($data['published']);
         $newPost->save;
 
         // reindirizzamento alla pagina creata dal post
