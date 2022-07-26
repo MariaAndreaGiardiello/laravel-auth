@@ -11,7 +11,10 @@
                     @csrf
                     <div class="form-group">
                       <label for="title">Titolo</label>
-                      <input type="text" class="form-control" id="title" name="title">
+                      <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title">
+                      @error('title')
+                        <div class="alert alert-danger">{{$message}}</div>
+                      @enderror
                     </div>
 
                     <div class="form-group">
