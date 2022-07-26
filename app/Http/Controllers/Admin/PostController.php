@@ -63,7 +63,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return view('admin.post.index', compact('posts'));
+        //
     }
 
     /**
@@ -120,7 +120,7 @@ class PostController extends Controller
         $slug = Str::of($title)->slug('-');
         $count = 1;
 
-        while( Post::where('slag', $slug)->first() ) {
+        while( Post::where('slug', $slug)->first() ) {
             $slug = Str::of($title)->slug('-') . "-{$count}";
             $count++;
         }

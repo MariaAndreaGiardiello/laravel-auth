@@ -16,7 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title', 200);
-            $table->string('slag')->unique(); // slag = uri
+            $table->string('slug')->unique(); // slag = uri
             $table->text('content');
             $table->boolean('published')->default(false);
             $table->timestamps();
